@@ -1,0 +1,11 @@
+.about-me-wrapper {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    
+}
+
+.home-video {
+    justify-self: flex-start;
+}

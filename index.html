@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Antonio Milin</title>
+
+    <!-- Favicon (logo) -->
+    <link rel="icon" href="icons/logo-pic.png" type="image/png" />
+    <link rel="apple-touch-icon" href="icons/logo-pic.png" />
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Antonio Milin – Full-Stack Software Engineer & UI/UX Developer" />
+    <meta name="description"
+        content="I'm Antonio Milin, a frontend and backend software engineer with a passion for UI/UX design. I build scalable apps and beautiful interfaces." />
+    <meta name="author" content="Antonio Milin" />
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords"
+        content="Antonio Milin, Software Engineer, Frontend Developer, Backend Developer, UI Developer, UX Designer, Web Developer, Full Stack Developer, Croatia Developer, Portfolio" />
+
+    <!-- seo --- end --- seo -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bangers&family=Coral+Pixels&family=Fontdiner+Swanky&family=Fredericka+the+Great&family=Honk&family=Lacquer&family=Lilita+One&family=Pangolin&family=Road+Rage&family=Rubik+Burned&family=Rubik+Doodle+Shadow&family=Rubik+Glitch&family=Rubik+Mono+One&family=Rubik+Vinyl&family=Rubik+Wet+Paint&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/experience.css">
+    <link rel="stylesheet" href="styles/skills.css">
+    <link rel="stylesheet" href="styles/projects.css">
+    <link rel="stylesheet" href="styles/contact.css">
+
+    <script defer src="script.js"></script>
+
+</head>
+
+<body>
+    <!-- <div class="sidebar">
+        <h2>Experience</h2>
+    </div> -->
+    <header>
+        <div class="header">
+            <input type="checkbox" id="checkbox">
+            <label for="checkbox" class="hamb-menu-box">
+                <div class="line" id="hamb-line-1"></div>
+                <div class="line" id="hamb-line-2"></div>
+                <div class="line" id="hamb-line-3"></div>
+            </label>
+
+            <div class="dropdown-menu">
+                <ul class="dropdown-ul">
+                    <li class="dropdown-li main-site" data-target="main-site">Home</li>
+                    <li class="dropdown-li experience" data-target="experience">Experience</li>
+                    <li class="dropdown-li skills" data-target="skills">Skills</li>
+                    <li class="dropdown-li projects" data-target="projects">Projects</li>
+                    <li class="dropdown-li contact-me" data-target="contact-me">Contact Me</li>
+                </ul>
+            </div>
+
+            <h3 class="logo-text">AM</h3>
+            <div class="nav-bar">
+                <!-- <div class="nav-item" data-target="about-me">About Me</div>
+                <div class="nav-item" data-target="experience">Experience</div>
+                <div class="nav-item" data-target="skills">Skills</div>
+                <div class="nav-item" data-target="projects">Projects</div>
+                <div class="nav-item" data-target="contact-me">Contact Me</div> -->
+                <ul>
+                    <!-- <li><a data-target="about-me" href="#">About Me</a></li> -->
+                    <li><a data-target="experience">Experince</a></li>
+                    <li><a data-target="skills">Skills</a></li>
+                    <li><a data-target="projects">Projects</a></li>
+                    <li><a data-target="contact-me">Contact Me</a></li>
+                </ul>
+            </div>
+            <div class="color-selection">
+                <img class="colors-icon" src="icons/colors_icon.png" alt="">
+                <select id="themeSelector">
+                    <option value="theme-light">Light</option>
+                    <option value="theme-dark">Dark</option>
+                    <!-- Add more options here -->
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="home-wrapper">
+        <div class="home-up-area">
+            <h1 class="fname">Antonio</h1>
+            <!-- <video class="home-video" autoplay muted loop playsinline>
+                <source src="home_gif.webm" type="video/webm">
+            </video> -->
+            <h2 class="lname">Milin</h2>
+        </div>
+        <div class="home-down-area">
+            <a data-target="contact-me" type="button" class="contact-btn">
+                <strong>CONTACT ME</strong>
+                <div id="container-stars">
+                    <div id="stars"></div>
+                </div>
+
+                <div id="glow">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </a>
+        </div>
+        <div class="scroll-down-icon">
+            <div class="scrolldown" style="--color: skyblue">
+                <div class="chevrons">
+                    <div class="chevrondown"></div>
+                    <div class="chevrondown"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="transition-1">
+        <div class="about-me-wrapper">
+            <video class="home-video" autoplay muted loop playsinline>
+                <source src="home_gif.webm" type="video/webm">
+            </video>
+        </div>
+    </div>
+
+    <section id="experience" class="exp-section">
+
+        <div class="popup-overlay" id="popup">
+            <div class="popup-box">
+                <div class="close-btn-box">
+                    <span class="close-btn" id="closePopup">&times;</span>
+                </div>
+
+                <h2 id="popup-title"></h2>
+                <p id="popup-description"></p>
+            </div>
+        </div>
+
+        <h1 class="section-title-experience">Experience</h1>
+
+        <div class="exp-wrapper">
+            <div class="item">
+                <div class="exp-info">
+                    <h3>Full Stack Developer</h3>
+                    <p>Millini - Olive Oil Company</p>
+                </div>
+                <a href="#" class="exp-button" data-id="exp1">View Details</a>
+            </div>
+            <div class="item">
+                <div class="exp-info">
+                    <h3>Student</h3>
+                    <p>California State University - Bakersfield</p>
+                </div>
+                <a href="#" class="exp-button" data-id="exp2">View Details</a>
+            </div>
+            <div class="item">
+                <div class="exp-info">
+                    <h3>Swimmer &#38; Coach</h3>
+                    <p>Croatian Swimming Federation</p>
+                </div>
+                <a href="#" class="exp-button" data-id="exp3">View Details</a>
+            </div>
+            <div class="item">
+                <div class="exp-info">
+                    <h3>CSUB</h3>
+                    <p>D1 Athlete</p>
+                </div>
+                <a href="#" class="exp-button" data-id="exp4">View Details</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+        <h1 class="section-title-skills">SKILLS</h1>
+        <!-- <h1 class="skills-sub-title">SKILLS</h1> -->
+
+        <div class="skills-box">
+            <h2 class="skill-box-title">Frontend</h2>
+            <div class="skill-duo">
+                <img src="icons/html-5.png" class="html-icon">
+                <p class="skill-p">HTML5</p>
+
+            </div>
+            <div class="skill-duo">
+                <img src="icons/css-3.png" class="css-icon">
+                <p class="skill-p">CSS</p>
+
+            </div>
+            <div class="skill-duo">
+                <img src="icons/sass.png" class="react-icon">
+                <p class="skill-p">SaSS</p>
+
+            </div>
+            <div class="skill-duo">
+                <img src="icons/js-icon.png" class="js-icon">
+                <p class="skill-p">JavaScript</p>
+
+            </div>
+            <div class="skill-duo">
+                <img src="icons/react.png" class="react-icon">
+                <p class="skill-p">React JS</p>
+            </div>
+        </div>
+
+        <div class="skills-box">
+            <h2 class="skill-box-title">Backend</h2>
+            <div class="skill-duo">
+                <img src="icons/js-icon.png" class="js-icon">
+                <p class="skill-p">JavaScript</p>
+
+            </div>
+            <div class="skill-duo">
+                <img src="icons/node-js.png" class="nodejs-icon">
+                <p class="skill-p">Node JS</p>
+
+            </div>
+        </div>
+
+        <div class="skills-box">
+            <h2 class="skill-box-title">Languages</h2>
+            <div class="skill-duo">
+                <img src="icons/cpp.png" class="cpp-icon">
+                <p class="skill-p">C++</p>
+
+            </div>
+            <div class="skill-duo">
+                <img src="icons/python.png" class="python-icon">
+                <p class="skill-p">Python</p>
+
+            </div>
+            <div class="skill-duo">
+                <img src="icons/js-icon.png" class="js-icon">
+                <p class="skill-p">JavaScript</p>
+
+            </div>
+            <div class="skill-duo">
+                <img src="icons/php.png" class="php-icon">
+                <p class="skill-p">PHP</p>
+
+            </div>
+        </div>
+
+        <div class="skills-box">
+            <h2 class="skill-box-title">Database</h2>
+            <div class="skill-duo">
+                <img src="icons/postgres.png" class="postgres-icon">
+                <p class="skill-p">PostgreSQL</p>
+
+            </div>
+            <div class="skill-duo">
+                <img src="icons/mysql.svg" class="mysql-icon">
+                <p class="skill-p">MySQL</p>
+
+            </div>
+            <div class="skill-duo">
+                <img src="icons/mongo.png" class="mongodb-icon">
+                <p class="skill-p">MongoDB</p>
+
+            </div>
+        </div>
+
+        <div class="skills-box">
+            <h2 class="skill-box-title">Version Control</h2>
+            <div class="skill-duo">
+                <img src="icons/git-icon.png" class="git-icon">
+                <p class="skill-p">Git</p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDER MARQUEE -> SKILLS -->
+    <div class="slider" style="--width: 100px; --height: 100px; --quantity: 9;">
+        <div class="list">
+            <div class="item-marquee" style="--position: 1"><img src="icons/resize/cpp.png" alt=""></div>
+            <div class="item-marquee" style="--position: 2"><img src="icons/resize/css-3.png" alt=""></div>
+            <div class="item-marquee" style="--position: 3"><img src="icons/resize/github.png" alt=""></div>
+            <div class="item-marquee" style="--position: 4"><img src="icons/resize/html-5.png" alt=""></div>
+            <div class="item-marquee" style="--position: 5"><img src="icons/resize/js-icon.png" alt=""></div>
+            <div class="item-marquee" style="--position: 6"><img src="icons/resize/react.png" alt=""></div>
+            <div class="item-marquee" style="--position: 7"><img src="icons/resize/sass.png" alt=""></div>
+            <div class="item-marquee" style="--position: 8"><img src="icons/resize/python.png" alt=""></div>
+            <div class="item-marquee" style="--position: 9"><img src="icons/resize/node-js.png" alt=""></div>
+        </div>
+    </div>
+
+    <section id="projects" class="projects-section">
+        <h1 class="section-title-projects">PROJECTS</h1>
+
+        <div class="card-wrapper">
+            <div class="project-box-wrapper box-1">
+                <div class="project-box-inner">
+                    <div class="project-box-front">
+                        <div class="box-number"><span>1</span></div>
+
+                        <div class="project-pic">
+                            <img class="project-image" src="pictures/movie-app-wp.png" alt="movie-app">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title">Movie Time</div>
+                            <div class="click-here-box">
+                                <svg class="click-here" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"
+                                    preserveAspectRatio="xMidYMid meet">
+                                    <g transform="translate(0,200) scale(0.1,-0.1)" stroke="none">
+                                        <path
+                                            d="M842 1588 c-20 -24 -42 -131 -30 -145 27 -33 57 3 73 90 10 51 -17 85 -43 55z" />
+                                        <path
+                                            d="M583 1543 c-4 -10 6 -39 24 -72 24 -43 37 -56 54 -56 35 0 34 26 -1 89 -33 58 -64 73 -77 39z" />
+                                        <path
+                                            d="M1002 1409 c-60 -34 -74 -56 -47 -75 16 -12 25 -10 64 12 69 40 87 59 71 78 -17 22 -27 20 -88 -15z" />
+                                        <path
+                                            d="M424 1345 c-11 -29 4 -42 71 -60 58 -15 68 -16 81 -3 25 25 6 45 -61 62 -79 20 -84 20 -91 1z" />
+                                        <path
+                                            d="M744 1331 c-32 -14 -64 -60 -64 -94 0 -25 108 -236 202 -394 l19 -32 -47 20 c-83 37 -151 25 -175 -32 -9 -24 -9 -33 5 -53 24 -38 349 -284 412 -313 123 -56 280 -16 398 103 86 86 107 212 57 343 -26 69 -138 272 -159 288 -26 19 -76 15 -107 -9 -20 -16 -39 -21 -69 -19 -30 2 -49 -4 -68 -18 -17 -14 -41 -21 -67 -21 -23 0 -53 -7 -67 -16 -13 -9 -26 -15 -28 -13 -2 2 -31 54 -65 115 -33 61 -69 118 -79 127 -23 21 -70 29 -98 18z m71 -73 c9 -13 60 -102 113 -198 94 -170 123 -205 138 -165 4 9 -3 34 -15 55 -26 47 -27 76 -1 90 30 16 52 5 75 -37 22 -40 33 -47 54 -34 13 8 13 15 1 50 -10 33 -11 43 0 56 21 26 59 18 78 -15 11 -21 24 -30 37 -28 17 3 20 9 17 44 -3 42 12 60 41 48 16 -6 130 -215 151 -277 9 -26 16 -75 16 -109 0 -111 -53 -182 -180 -242 -52 -25 -77 -31 -130 -31 -79 1 -101 12 -240 118 -226 174 -242 188 -229 203 19 23 51 16 143 -32 79 -41 90 -44 103 -31 14 14 1 42 -121 262 -75 136 -136 251 -136 256 0 14 31 39 50 39 11 0 26 -10 35 -22z" />
+                                        <path
+                                            d="M517 1132 c-61 -37 -69 -45 -61 -65 9 -25 38 -21 100 14 43 25 54 36 52 53 -4 31 -36 30 -91 -2z" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-box-back">
+                        <a href="https://github.com/antoniomilin13/movie-app.git" target="_blank"
+                            class="github-wrapper">
+                            <h3 class="project-back-h3">Github</h3>
+                            <img class="p-b-github" src="icons/github.png" alt="githubich">
+                        </a>
+                        <div class="skills-used">
+                            <h3 class="p-b-skill">React</h3>
+                            <h3 class="p-b-skill">Node.js</h3>
+                            <h3 class="p-b-skill">Appwrite</h3>
+                            <h3 class="p-b-skill">Tailwind</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-box-wrapper box-2">
+                <div class="project-box-inner">
+                    <div class="project-box-front">
+                        <div class="box-number"><span>2</span></div>
+
+                        <div class="project-pic">
+                            <img class="project-image" src="pictures/weather_app.png" alt="befit-app">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title">Weather App</div>
+                            <div class="click-here">
+                                <svg class="click-here" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"
+                                    preserveAspectRatio="xMidYMid meet">
+                                    <g transform="translate(0,200) scale(0.1,-0.1)" stroke="none">
+                                        <path
+                                            d="M842 1588 c-20 -24 -42 -131 -30 -145 27 -33 57 3 73 90 10 51 -17 85 -43 55z" />
+                                        <path
+                                            d="M583 1543 c-4 -10 6 -39 24 -72 24 -43 37 -56 54 -56 35 0 34 26 -1 89 -33 58 -64 73 -77 39z" />
+                                        <path
+                                            d="M1002 1409 c-60 -34 -74 -56 -47 -75 16 -12 25 -10 64 12 69 40 87 59 71 78 -17 22 -27 20 -88 -15z" />
+                                        <path
+                                            d="M424 1345 c-11 -29 4 -42 71 -60 58 -15 68 -16 81 -3 25 25 6 45 -61 62 -79 20 -84 20 -91 1z" />
+                                        <path
+                                            d="M744 1331 c-32 -14 -64 -60 -64 -94 0 -25 108 -236 202 -394 l19 -32 -47 20 c-83 37 -151 25 -175 -32 -9 -24 -9 -33 5 -53 24 -38 349 -284 412 -313 123 -56 280 -16 398 103 86 86 107 212 57 343 -26 69 -138 272 -159 288 -26 19 -76 15 -107 -9 -20 -16 -39 -21 -69 -19 -30 2 -49 -4 -68 -18 -17 -14 -41 -21 -67 -21 -23 0 -53 -7 -67 -16 -13 -9 -26 -15 -28 -13 -2 2 -31 54 -65 115 -33 61 -69 118 -79 127 -23 21 -70 29 -98 18z m71 -73 c9 -13 60 -102 113 -198 94 -170 123 -205 138 -165 4 9 -3 34 -15 55 -26 47 -27 76 -1 90 30 16 52 5 75 -37 22 -40 33 -47 54 -34 13 8 13 15 1 50 -10 33 -11 43 0 56 21 26 59 18 78 -15 11 -21 24 -30 37 -28 17 3 20 9 17 44 -3 42 12 60 41 48 16 -6 130 -215 151 -277 9 -26 16 -75 16 -109 0 -111 -53 -182 -180 -242 -52 -25 -77 -31 -130 -31 -79 1 -101 12 -240 118 -226 174 -242 188 -229 203 19 23 51 16 143 -32 79 -41 90 -44 103 -31 14 14 1 42 -121 262 -75 136 -136 251 -136 256 0 14 31 39 50 39 11 0 26 -10 35 -22z" />
+                                        <path
+                                            d="M517 1132 c-61 -37 -69 -45 -61 -65 9 -25 38 -21 100 14 43 25 54 36 52 53 -4 31 -36 30 -91 -2z" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-box-back">
+                        <a href="https://github.com/antoniomilin13/weather-app.git" target="_blank"
+                            class="github-wrapper">
+                            <h3 class="project-back-h3">Github</h3>
+                            <img class="p-b-github" src="icons/github.png" alt="githubich">
+                        </a>
+                        <div class="skills-used">
+                            <h3 class="p-b-skill">HTML</h3>
+                            <h3 class="p-b-skill">JavaScript</h3>
+                            <h3 class="p-b-skill">CSS</h3>
+                            <h3 class="p-b-skill">OWP</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-box-wrapper box-3">
+                <div class="project-box-inner">
+                    <div class="project-box-front">
+                        <div class="box-number"><span>2</span></div>
+
+                        <div class="project-pic">
+                            <img class="project-image" src="pictures/befit.png" alt="befit-app">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title">BeFIT</div>
+                            <div class="click-here">
+                                <svg class="click-here" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"
+                                    preserveAspectRatio="xMidYMid meet">
+                                    <g transform="translate(0,200) scale(0.1,-0.1)" stroke="none">
+                                        <path
+                                            d="M842 1588 c-20 -24 -42 -131 -30 -145 27 -33 57 3 73 90 10 51 -17 85 -43 55z" />
+                                        <path
+                                            d="M583 1543 c-4 -10 6 -39 24 -72 24 -43 37 -56 54 -56 35 0 34 26 -1 89 -33 58 -64 73 -77 39z" />
+                                        <path
+                                            d="M1002 1409 c-60 -34 -74 -56 -47 -75 16 -12 25 -10 64 12 69 40 87 59 71 78 -17 22 -27 20 -88 -15z" />
+                                        <path
+                                            d="M424 1345 c-11 -29 4 -42 71 -60 58 -15 68 -16 81 -3 25 25 6 45 -61 62 -79 20 -84 20 -91 1z" />
+                                        <path
+                                            d="M744 1331 c-32 -14 -64 -60 -64 -94 0 -25 108 -236 202 -394 l19 -32 -47 20 c-83 37 -151 25 -175 -32 -9 -24 -9 -33 5 -53 24 -38 349 -284 412 -313 123 -56 280 -16 398 103 86 86 107 212 57 343 -26 69 -138 272 -159 288 -26 19 -76 15 -107 -9 -20 -16 -39 -21 -69 -19 -30 2 -49 -4 -68 -18 -17 -14 -41 -21 -67 -21 -23 0 -53 -7 -67 -16 -13 -9 -26 -15 -28 -13 -2 2 -31 54 -65 115 -33 61 -69 118 -79 127 -23 21 -70 29 -98 18z m71 -73 c9 -13 60 -102 113 -198 94 -170 123 -205 138 -165 4 9 -3 34 -15 55 -26 47 -27 76 -1 90 30 16 52 5 75 -37 22 -40 33 -47 54 -34 13 8 13 15 1 50 -10 33 -11 43 0 56 21 26 59 18 78 -15 11 -21 24 -30 37 -28 17 3 20 9 17 44 -3 42 12 60 41 48 16 -6 130 -215 151 -277 9 -26 16 -75 16 -109 0 -111 -53 -182 -180 -242 -52 -25 -77 -31 -130 -31 -79 1 -101 12 -240 118 -226 174 -242 188 -229 203 19 23 51 16 143 -32 79 -41 90 -44 103 -31 14 14 1 42 -121 262 -75 136 -136 251 -136 256 0 14 31 39 50 39 11 0 26 -10 35 -22z" />
+                                        <path
+                                            d="M517 1132 c-61 -37 -69 -45 -61 -65 9 -25 38 -21 100 14 43 25 54 36 52 53 -4 31 -36 30 -91 -2z" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-box-back">
+                        <a href="https://github.com/antoniomilin13/movie-app.git" target="_blank"
+                            class="github-wrapper">
+                            <h3 class="project-back-h3">Github</h3>
+                            <img class="p-b-github" src="icons/github.png" alt="githubich">
+                        </a>
+                        <div class="skills-used">
+                            <h3 class="p-b-skill">HTML</h3>
+                            <h3 class="p-b-skill">CSS</h3>
+                            <h3 class="p-b-skill">JavaScript</h3>
+                            <h3 class="p-b-skill">Node.js</h3>
+                            <h3 class="p-b-skill">PostgreSQL</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-box-wrapper box-1">
+                <div class="project-box-inner">
+                    <div class="project-box-front">
+                        <div class="box-number"><span>3</span></div>
+
+                        <div class="project-pic">
+                            <img class="project-image" src="pictures/ai_track.png" alt="car-learner">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title">Car Learning</div>
+                            <div class="click-here">
+                                <svg class="click-here" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"
+                                    preserveAspectRatio="xMidYMid meet">
+                                    <g transform="translate(0,200) scale(0.1,-0.1)" stroke="none">
+                                        <path
+                                            d="M842 1588 c-20 -24 -42 -131 -30 -145 27 -33 57 3 73 90 10 51 -17 85 -43 55z" />
+                                        <path
+                                            d="M583 1543 c-4 -10 6 -39 24 -72 24 -43 37 -56 54 -56 35 0 34 26 -1 89 -33 58 -64 73 -77 39z" />
+                                        <path
+                                            d="M1002 1409 c-60 -34 -74 -56 -47 -75 16 -12 25 -10 64 12 69 40 87 59 71 78 -17 22 -27 20 -88 -15z" />
+                                        <path
+                                            d="M424 1345 c-11 -29 4 -42 71 -60 58 -15 68 -16 81 -3 25 25 6 45 -61 62 -79 20 -84 20 -91 1z" />
+                                        <path
+                                            d="M744 1331 c-32 -14 -64 -60 -64 -94 0 -25 108 -236 202 -394 l19 -32 -47 20 c-83 37 -151 25 -175 -32 -9 -24 -9 -33 5 -53 24 -38 349 -284 412 -313 123 -56 280 -16 398 103 86 86 107 212 57 343 -26 69 -138 272 -159 288 -26 19 -76 15 -107 -9 -20 -16 -39 -21 -69 -19 -30 2 -49 -4 -68 -18 -17 -14 -41 -21 -67 -21 -23 0 -53 -7 -67 -16 -13 -9 -26 -15 -28 -13 -2 2 -31 54 -65 115 -33 61 -69 118 -79 127 -23 21 -70 29 -98 18z m71 -73 c9 -13 60 -102 113 -198 94 -170 123 -205 138 -165 4 9 -3 34 -15 55 -26 47 -27 76 -1 90 30 16 52 5 75 -37 22 -40 33 -47 54 -34 13 8 13 15 1 50 -10 33 -11 43 0 56 21 26 59 18 78 -15 11 -21 24 -30 37 -28 17 3 20 9 17 44 -3 42 12 60 41 48 16 -6 130 -215 151 -277 9 -26 16 -75 16 -109 0 -111 -53 -182 -180 -242 -52 -25 -77 -31 -130 -31 -79 1 -101 12 -240 118 -226 174 -242 188 -229 203 19 23 51 16 143 -32 79 -41 90 -44 103 -31 14 14 1 42 -121 262 -75 136 -136 251 -136 256 0 14 31 39 50 39 11 0 26 -10 35 -22z" />
+                                        <path
+                                            d="M517 1132 c-61 -37 -69 -45 -61 -65 9 -25 38 -21 100 14 43 25 54 36 52 53 -4 31 -36 30 -91 -2z" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-box-back">
+                        <a href="https://github.com/antoniomilin13/car_track_self.git" target="_blank"
+                            class="github-wrapper">
+                            <h3 class="project-back-h3">Github</h3>
+                            <img class="p-b-github" src="icons/github.png" alt="githubich">
+                        </a>
+                        <div class="skills-used">
+                            <h3 class="p-b-skill">Python</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-box-wrapper box-2">
+                <div class="project-box-inner">
+                    <div class="project-box-front">
+                        <div class="box-number"><span>1</span></div>
+
+                        <div class="project-pic">
+                            <img class="project-image" src="pictures/car_tracker.png" alt="car-tracker">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title">AI/ML Car Counter</div>
+                            <div class="click-here">
+                                <svg class="click-here" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"
+                                    preserveAspectRatio="xMidYMid meet">
+                                    <g transform="translate(0,200) scale(0.1,-0.1)" stroke="none">
+                                        <path
+                                            d="M842 1588 c-20 -24 -42 -131 -30 -145 27 -33 57 3 73 90 10 51 -17 85 -43 55z" />
+                                        <path
+                                            d="M583 1543 c-4 -10 6 -39 24 -72 24 -43 37 -56 54 -56 35 0 34 26 -1 89 -33 58 -64 73 -77 39z" />
+                                        <path
+                                            d="M1002 1409 c-60 -34 -74 -56 -47 -75 16 -12 25 -10 64 12 69 40 87 59 71 78 -17 22 -27 20 -88 -15z" />
+                                        <path
+                                            d="M424 1345 c-11 -29 4 -42 71 -60 58 -15 68 -16 81 -3 25 25 6 45 -61 62 -79 20 -84 20 -91 1z" />
+                                        <path
+                                            d="M744 1331 c-32 -14 -64 -60 -64 -94 0 -25 108 -236 202 -394 l19 -32 -47 20 c-83 37 -151 25 -175 -32 -9 -24 -9 -33 5 -53 24 -38 349 -284 412 -313 123 -56 280 -16 398 103 86 86 107 212 57 343 -26 69 -138 272 -159 288 -26 19 -76 15 -107 -9 -20 -16 -39 -21 -69 -19 -30 2 -49 -4 -68 -18 -17 -14 -41 -21 -67 -21 -23 0 -53 -7 -67 -16 -13 -9 -26 -15 -28 -13 -2 2 -31 54 -65 115 -33 61 -69 118 -79 127 -23 21 -70 29 -98 18z m71 -73 c9 -13 60 -102 113 -198 94 -170 123 -205 138 -165 4 9 -3 34 -15 55 -26 47 -27 76 -1 90 30 16 52 5 75 -37 22 -40 33 -47 54 -34 13 8 13 15 1 50 -10 33 -11 43 0 56 21 26 59 18 78 -15 11 -21 24 -30 37 -28 17 3 20 9 17 44 -3 42 12 60 41 48 16 -6 130 -215 151 -277 9 -26 16 -75 16 -109 0 -111 -53 -182 -180 -242 -52 -25 -77 -31 -130 -31 -79 1 -101 12 -240 118 -226 174 -242 188 -229 203 19 23 51 16 143 -32 79 -41 90 -44 103 -31 14 14 1 42 -121 262 -75 136 -136 251 -136 256 0 14 31 39 50 39 11 0 26 -10 35 -22z" />
+                                        <path
+                                            d="M517 1132 c-61 -37 -69 -45 -61 -65 9 -25 38 -21 100 14 43 25 54 36 52 53 -4 31 -36 30 -91 -2z" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-box-back">
+                        <a href="https://github.com/antoniomilin13/car_track_self.git" target="_blank"
+                            class="github-wrapper">
+                            <h3 class="project-back-h3">Github</h3>
+                            <img class="p-b-github" src="icons/github.png" alt="githubich">
+                        </a>
+                        <div class="skills-used">
+                            <h3 class="p-b-skill">Python</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-box-wrapper box-3">
+                <div class="project-box-inner">
+                    <div class="project-box-front">
+                        <div class="box-number"><span>1</span></div>
+
+                        <div class="project-pic">
+                            <img class="project-image" src="pictures/snake-game.png" alt="snake-game">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title">Snake Game</div>
+                            <div class="click-here">
+                                <svg class="click-here" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"
+                                    preserveAspectRatio="xMidYMid meet">
+                                    <g transform="translate(0,200) scale(0.1,-0.1)" stroke="none">
+                                        <path
+                                            d="M842 1588 c-20 -24 -42 -131 -30 -145 27 -33 57 3 73 90 10 51 -17 85 -43 55z" />
+                                        <path
+                                            d="M583 1543 c-4 -10 6 -39 24 -72 24 -43 37 -56 54 -56 35 0 34 26 -1 89 -33 58 -64 73 -77 39z" />
+                                        <path
+                                            d="M1002 1409 c-60 -34 -74 -56 -47 -75 16 -12 25 -10 64 12 69 40 87 59 71 78 -17 22 -27 20 -88 -15z" />
+                                        <path
+                                            d="M424 1345 c-11 -29 4 -42 71 -60 58 -15 68 -16 81 -3 25 25 6 45 -61 62 -79 20 -84 20 -91 1z" />
+                                        <path
+                                            d="M744 1331 c-32 -14 -64 -60 -64 -94 0 -25 108 -236 202 -394 l19 -32 -47 20 c-83 37 -151 25 -175 -32 -9 -24 -9 -33 5 -53 24 -38 349 -284 412 -313 123 -56 280 -16 398 103 86 86 107 212 57 343 -26 69 -138 272 -159 288 -26 19 -76 15 -107 -9 -20 -16 -39 -21 -69 -19 -30 2 -49 -4 -68 -18 -17 -14 -41 -21 -67 -21 -23 0 -53 -7 -67 -16 -13 -9 -26 -15 -28 -13 -2 2 -31 54 -65 115 -33 61 -69 118 -79 127 -23 21 -70 29 -98 18z m71 -73 c9 -13 60 -102 113 -198 94 -170 123 -205 138 -165 4 9 -3 34 -15 55 -26 47 -27 76 -1 90 30 16 52 5 75 -37 22 -40 33 -47 54 -34 13 8 13 15 1 50 -10 33 -11 43 0 56 21 26 59 18 78 -15 11 -21 24 -30 37 -28 17 3 20 9 17 44 -3 42 12 60 41 48 16 -6 130 -215 151 -277 9 -26 16 -75 16 -109 0 -111 -53 -182 -180 -242 -52 -25 -77 -31 -130 -31 -79 1 -101 12 -240 118 -226 174 -242 188 -229 203 19 23 51 16 143 -32 79 -41 90 -44 103 -31 14 14 1 42 -121 262 -75 136 -136 251 -136 256 0 14 31 39 50 39 11 0 26 -10 35 -22z" />
+                                        <path
+                                            d="M517 1132 c-61 -37 -69 -45 -61 -65 9 -25 38 -21 100 14 43 25 54 36 52 53 -4 31 -36 30 -91 -2z" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-box-back">
+                        <a href="https://github.com/antoniomilin13/gaming-center.git" target="_blank"
+                            class="github-wrapper">
+                            <h3 class="project-back-h3">Github</h3>
+                            <img class="p-b-github" src="icons/github.png" alt="githubich">
+                        </a>
+                        <a href="games.html" target="_blank" class="joystick-wrapper">
+                            <h3 class="project-back-h3">Lets Play!</h3>
+                            <img class="p-b-github" src="icons/joystick.png" alt="dzojstik">
+                        </a>
+                        <div class="skills-used">
+                            <h3 class="p-b-skill">Html</h3>
+                            <h3 class="p-b-skill">CSS</h3>
+                            <h3 class="p-b-skill">JavaScript</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-box-wrapper box-1">
+                <div class="project-box-inner">
+                    <div class="project-box-front">
+                        <div class="box-number"><span>1</span></div>
+
+                        <div class="project-pic">
+                            <img class="project-image" src="pictures/candy-crush.png" alt="candy-crush">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title">Candy Crush</div>
+                            <div class="click-here">
+                                <svg class="click-here" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"
+                                    preserveAspectRatio="xMidYMid meet">
+                                    <g transform="translate(0,200) scale(0.1,-0.1)" stroke="none">
+                                        <path
+                                            d="M842 1588 c-20 -24 -42 -131 -30 -145 27 -33 57 3 73 90 10 51 -17 85 -43 55z" />
+                                        <path
+                                            d="M583 1543 c-4 -10 6 -39 24 -72 24 -43 37 -56 54 -56 35 0 34 26 -1 89 -33 58 -64 73 -77 39z" />
+                                        <path
+                                            d="M1002 1409 c-60 -34 -74 -56 -47 -75 16 -12 25 -10 64 12 69 40 87 59 71 78 -17 22 -27 20 -88 -15z" />
+                                        <path
+                                            d="M424 1345 c-11 -29 4 -42 71 -60 58 -15 68 -16 81 -3 25 25 6 45 -61 62 -79 20 -84 20 -91 1z" />
+                                        <path
+                                            d="M744 1331 c-32 -14 -64 -60 -64 -94 0 -25 108 -236 202 -394 l19 -32 -47 20 c-83 37 -151 25 -175 -32 -9 -24 -9 -33 5 -53 24 -38 349 -284 412 -313 123 -56 280 -16 398 103 86 86 107 212 57 343 -26 69 -138 272 -159 288 -26 19 -76 15 -107 -9 -20 -16 -39 -21 -69 -19 -30 2 -49 -4 -68 -18 -17 -14 -41 -21 -67 -21 -23 0 -53 -7 -67 -16 -13 -9 -26 -15 -28 -13 -2 2 -31 54 -65 115 -33 61 -69 118 -79 127 -23 21 -70 29 -98 18z m71 -73 c9 -13 60 -102 113 -198 94 -170 123 -205 138 -165 4 9 -3 34 -15 55 -26 47 -27 76 -1 90 30 16 52 5 75 -37 22 -40 33 -47 54 -34 13 8 13 15 1 50 -10 33 -11 43 0 56 21 26 59 18 78 -15 11 -21 24 -30 37 -28 17 3 20 9 17 44 -3 42 12 60 41 48 16 -6 130 -215 151 -277 9 -26 16 -75 16 -109 0 -111 -53 -182 -180 -242 -52 -25 -77 -31 -130 -31 -79 1 -101 12 -240 118 -226 174 -242 188 -229 203 19 23 51 16 143 -32 79 -41 90 -44 103 -31 14 14 1 42 -121 262 -75 136 -136 251 -136 256 0 14 31 39 50 39 11 0 26 -10 35 -22z" />
+                                        <path
+                                            d="M517 1132 c-61 -37 -69 -45 -61 -65 9 -25 38 -21 100 14 43 25 54 36 52 53 -4 31 -36 30 -91 -2z" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-box-back">
+                        <a href="https://github.com/antoniomilin13/gaming-center.git" target="_blank"
+                            class="github-wrapper">
+                            <h3 class="project-back-h3">Github</h3>
+                            <img class="p-b-github" src="icons/github.png" alt="githubich">
+                        </a>
+                        <a href="games.html" target="_blank" class="joystick-wrapper">
+                            <h3 class="project-back-h3">Lets Play!</h3>
+                            <img class="p-b-github" src="icons/joystick.png" alt="dzojstik">
+                        </a>
+                        <div class="skills-used">
+                            <h3 class="p-b-skill">Html</h3>
+                            <h3 class="p-b-skill">CSS</h3>
+                            <h3 class="p-b-skill">JavaScript</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-box-wrapper box-2">
+                <div class="project-box-inner">
+                    <div class="project-box-front">
+                        <div class="box-number"><span>1</span></div>
+
+                        <div class="project-pic">
+                            <img class="project-image" src="pictures/2048-game.png" alt="2048">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-title">2048 game</div>
+                            <div class="click-here">
+                                <svg class="click-here" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"
+                                    preserveAspectRatio="xMidYMid meet">
+                                    <g transform="translate(0,200) scale(0.1,-0.1)" stroke="none">
+                                        <path
+                                            d="M842 1588 c-20 -24 -42 -131 -30 -145 27 -33 57 3 73 90 10 51 -17 85 -43 55z" />
+                                        <path
+                                            d="M583 1543 c-4 -10 6 -39 24 -72 24 -43 37 -56 54 -56 35 0 34 26 -1 89 -33 58 -64 73 -77 39z" />
+                                        <path
+                                            d="M1002 1409 c-60 -34 -74 -56 -47 -75 16 -12 25 -10 64 12 69 40 87 59 71 78 -17 22 -27 20 -88 -15z" />
+                                        <path
+                                            d="M424 1345 c-11 -29 4 -42 71 -60 58 -15 68 -16 81 -3 25 25 6 45 -61 62 -79 20 -84 20 -91 1z" />
+                                        <path
+                                            d="M744 1331 c-32 -14 -64 -60 -64 -94 0 -25 108 -236 202 -394 l19 -32 -47 20 c-83 37 -151 25 -175 -32 -9 -24 -9 -33 5 -53 24 -38 349 -284 412 -313 123 -56 280 -16 398 103 86 86 107 212 57 343 -26 69 -138 272 -159 288 -26 19 -76 15 -107 -9 -20 -16 -39 -21 -69 -19 -30 2 -49 -4 -68 -18 -17 -14 -41 -21 -67 -21 -23 0 -53 -7 -67 -16 -13 -9 -26 -15 -28 -13 -2 2 -31 54 -65 115 -33 61 -69 118 -79 127 -23 21 -70 29 -98 18z m71 -73 c9 -13 60 -102 113 -198 94 -170 123 -205 138 -165 4 9 -3 34 -15 55 -26 47 -27 76 -1 90 30 16 52 5 75 -37 22 -40 33 -47 54 -34 13 8 13 15 1 50 -10 33 -11 43 0 56 21 26 59 18 78 -15 11 -21 24 -30 37 -28 17 3 20 9 17 44 -3 42 12 60 41 48 16 -6 130 -215 151 -277 9 -26 16 -75 16 -109 0 -111 -53 -182 -180 -242 -52 -25 -77 -31 -130 -31 -79 1 -101 12 -240 118 -226 174 -242 188 -229 203 19 23 51 16 143 -32 79 -41 90 -44 103 -31 14 14 1 42 -121 262 -75 136 -136 251 -136 256 0 14 31 39 50 39 11 0 26 -10 35 -22z" />
+                                        <path
+                                            d="M517 1132 c-61 -37 -69 -45 -61 -65 9 -25 38 -21 100 14 43 25 54 36 52 53 -4 31 -36 30 -91 -2z" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-box-back">
+                        <a href="https://github.com/antoniomilin13/gaming-center.git" target="_blank"
+                            class="github-wrapper">
+                            <h3 class="project-back-h3">Github</h3>
+                            <img class="p-b-github" src="icons/github.png" alt="githubich">
+                        </a>
+                        <a href="games.html" target="_blank" class="joystick-wrapper">
+                            <h3 class="project-back-h3">Lets Play!</h3>
+                            <img class="p-b-github" src="icons/joystick.png" alt="dzojstik">
+                        </a>
+                        <div class="skills-used">
+                            <h3 class="p-b-skill">Html</h3>
+                            <h3 class="p-b-skill">CSS</h3>
+                            <h3 class="p-b-skill">JavaScript</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact-me" class="contact-section">
+        <h1 class="section-title-contact">CONTACT ME</h1>
+        <div class="contact-me-info-wrapper">
+            <div class="contact-me-topic word-type-border">
+                <div class="box-title">Text</div>
+                <div class="ball1"></div>
+                <div class="ball2"></div>
+                <div class="ball3"></div>
+                <div class="ball4"></div>
+                <div class="ball1m"></div>
+                <div class="ball2m"></div>
+                <div class="ball3m"></div>
+                <div class="ball4m"></div>
+
+
+                <div class="email-title">E-mail</div>
+                <div class="email-email">antoniomilin13@gmail.com</div>
+
+                <div class="comic-brutal-button-container">
+                    <a href="mailto:antoniomilin13@gmail.com" class="comic-brutal-button">
+                        <div class="button-inner">
+                            <span class="button-text">E-mail</span>
+                            <div class="halftone-overlay"></div>
+                            <div class="ink-splatter"></div>
+                        </div>
+                        <div class="button-shadow"></div>
+                        <div class="button-frame"></div>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- RESUME box -->
+            <div class="contact-me-topic">
+                <div class="resume-title">Resume</div>
+                <div class="email-email">
+                    <p>Click below to download</p>
+                    <div class="arrow-down">
+                        <img class="down-arrow" src="gifs/down_arrow.webp" alt="down-arrow">
+                    </div>
+                </div>
+
+                <div class="comic-brutal-button-container">
+                    <a class="comic-brutal-button" href="documents/Antonio_Milin_CV.pdf" download>
+                        <div class="button-inner">
+                            <span class="button-text">cv</span>
+                            <div class="halftone-overlay"></div>
+                            <div class="ink-splatter"></div>
+                        </div>
+                        <div class="button-shadow"></div>
+                        <div class="button-frame"></div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- LINKED IN box -->
+            <div class="contact-me-topic">
+                <div class="linkedin-title">
+                    <div class="linkedin-text">Linked</div>
+                    <img class="linkedin-icon" src="icons/linked_in.webp" alt="linked_in">
+                </div>
+                <div class="email-email">antonio-milin</div>
+
+                <div class="comic-brutal-button-container">
+                    <a href="https://www.linkedin.com/in/antonio-milin-966369273" target="_blank"
+                        class="comic-brutal-button">
+                        <div class="button-inner">
+                            <span class="button-text">LinkedIn</span>
+                            <div class="halftone-overlay"></div>
+                            <div class="ink-splatter"></div>
+                        </div>
+                        <div class="button-shadow"></div>
+                        <div class="button-frame"></div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+</html>

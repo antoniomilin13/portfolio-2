@@ -1,0 +1,528 @@
+.exp-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 5rem;
+}
+
+.exp-wrapper {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+
+    overflow: hidden;
+
+    padding: 2rem 0;
+}
+
+.section-title-experience {
+    font-family: "Rubik Glitch", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem;
+
+    color: var(--text-sec-title);
+
+
+    align-self: flex-start;
+    padding-left: 0;
+    opacity: 0;
+
+}
+
+.section-title-experience.animate {
+    animation: titleSlide 0.4s ease forwards;
+}
+
+@keyframes titleSlide {
+    to {
+        opacity: 1;
+        padding-left: 6rem;
+    }
+}
+
+.item {
+    position: relative;
+
+    border: 2px solid var(--border-color1);
+    border-radius: 2rem;
+
+    background-color: var(--box-color1);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
+    transition:
+        background-color 0.3s ease;
+}
+
+.item:hover {
+    background-color: var(--box-color2);
+}
+
+.exp-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 2rem;
+
+    color: var(--text-black);
+
+    & h3 {
+        font-family: "Lilita One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.8rem;
+    }
+
+    & p {
+        font-family: "Bangers", system-ui;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.4rem;
+    }
+}
+
+.exp-button {
+    text-decoration: none;
+    color: var(--text-black);
+    font-weight: bold;
+    border: 1px solid var(--border-color1);
+    border-radius: 30px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1),
+        inset -2px 2px 4px rgb(255, 255, 255),
+        inset 2px -2px 4px rgb(43, 42, 42);
+    font-size: 1.2rem;
+    padding: 8px 26px;
+    background-color: var(--button-color1);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.4s ease;
+}
+
+.exp-button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    font-weight: bolder;
+    box-shadow: 0 0 15px var(--box-shadow3);
+}
+
+/* ---------------------------- */
+/* --- POP UP BOX --- */
+
+/* == == POP UP TEXT FOR EXPERIENCE == == */
+#popup-title {
+    font-family: "Bangers", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.7rem;
+}
+
+#popup-description {
+    overflow-y: auto;
+    flex-grow: 1;
+    margin-top: 15px;
+    padding-right: 10px;
+    /* space for scrollbar */
+    /* max-height: 90%; */
+    max-height: 60vh;
+    /* control scrollable area height */
+
+    font-family: "Pangolin", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2rem;
+}
+
+#popup-description ul {
+    padding: 1.5rem;
+    margin-top: 1rem;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+
+    background: var(--bg-light);
+    border: 2px solid var(--bg-light-1);
+
+}
+
+#popup-description li {
+    list-style-type: none;
+    margin-bottom: 1rem;
+    /* increase this for more space */
+    line-height: 1.6;
+
+
+}
+
+#popup-description li:nth-child(odd) {
+    color: var(--popup-text1);
+}
+
+#popup-description li:nth-child(even) {
+    color: var(--popup-text2);
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+}
+
+.popup-box {
+    background: var(--project-box-0-no-blur);
+    padding: 20px 20px;
+    width: 420px;
+    max-width: 90%;
+    max-height: 90vh;
+    /* allow room if needed */
+    overflow-y: auto;
+    border-radius: 29px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 0 3.5em var(--project-box-0),
+        inset -5px -5px 5px rgba(83, 83, 83, 0.719),
+        inset 5px 5px 5px rgba(83, 83, 83, 0.719);
+
+    background-image: conic-gradient(from var(--angle), var(--conic-1), var(--conic-2), var(--conic-3), var(--conic-2), var(--conic-1));
+
+    border: 2px solid black;
+    overflow: hidden;
+
+    animation: 3s spin linear infinite;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.close-btn-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    justify-self: end;
+    width: 60px;
+    height: 60px;
+}
+
+.close-btn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 38px;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: var(--project-box-1-transparent);
+}
+
+.close-btn:hover {
+    animation: 0.4s close-btn ease;
+}
+
+@keyframes close-btn {
+    0% {
+        transform: scale(1.0) rotate(0deg);
+    }
+
+    100% {
+        transform: scale(1.5) rotate(360deg);
+    }
+}
+
+/* .................done */
+
+/* = - = - = - SLIDE RIGHT ANIMATIONS - = - = - = */
+@keyframes slideRight {
+    0% {
+        left: -32rem;
+        opacity: 0;
+        box-shadow: 0 0 15px var(--box-shadow3);
+        box-shadow: -80px 0 80px var(--button-color1);
+    }
+
+    75% {
+        left: -14rem;
+        opacity: 1;
+        box-shadow: 0 0 15px var(--box-shadow3);
+    }
+
+    100% {
+        left: -16rem;
+        opacity: 1;
+    }
+}
+
+@keyframes slideRight_2 {
+    0% {
+        left: -28rem;
+        opacity: 0;
+        box-shadow: 0 0 15px var(--box-shadow3);
+        box-shadow: -80px 0 80px var(--button-color1);
+    }
+
+    75% {
+        left: -12rem;
+        opacity: 1;
+        box-shadow: 0 0 15px var(--box-shadow3);
+    }
+
+    100% {
+        left: -14rem;
+        opacity: 1;
+    }
+}
+
+@keyframes slideRight_3 {
+    0% {
+        left: -24rem;
+        opacity: 0;
+        box-shadow: 0 0 15px var(--box-shadow3);
+        box-shadow: -80px 0 80px var(--button-color1);
+    }
+
+    75% {
+        left: -8rem;
+        opacity: 1;
+        box-shadow: 0 0 15px var(--box-shadow3);
+    }
+
+    100% {
+        left: -10rem;
+        opacity: 1;
+    }
+}
+
+/* = - = - = - SLIDE LEFT ANIMATIONS - = - = - = */
+@keyframes slideLeft {
+    0% {
+        right: -32rem;
+        opacity: 0;
+        box-shadow: 0 0 15px var(--box-shadow3);
+        box-shadow: 80px 0 80px var(--button-color1);
+    }
+
+    75% {
+        right: -14rem;
+        opacity: 1;
+        box-shadow: 0 0 15px var(--box-shadow3);
+    }
+
+    100% {
+        right: -16rem;
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft_2 {
+    0% {
+        right: -28rem;
+        opacity: 0;
+        box-shadow: 0 0 15px var(--box-shadow3);
+        box-shadow: 80px 0 80px var(--button-color1);
+    }
+
+    75% {
+        right: -12rem;
+        opacity: 1;
+        box-shadow: 0 0 15px var(--box-shadow3);
+    }
+
+    100% {
+        right: -14rem;
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft_3 {
+    0% {
+        right: -24rem;
+        opacity: 0;
+        box-shadow: 0 0 15px var(--box-shadow3);
+        box-shadow: 80px 0 80px var(--button-color1);
+    }
+
+    75% {
+        right: -8rem;
+        opacity: 1;
+        box-shadow: 0 0 15px var(--box-shadow3);
+    }
+
+    100% {
+        right: -10rem;
+        opacity: 1;
+    }
+}
+
+/* = - = - = - SLIDE UP ANIMATIONS - = - = - = */
+@keyframes slideUp {
+    0% {
+        top: 10rem;
+        opacity: 0;
+        box-shadow: 0 80px 10px var(--button-color1);
+    }
+
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+
+/* ============================================= */
+/* ----------- RESPONSIVE DESIGN --------------- */
+
+@media (min-width: 1080px) {
+    .item {
+        width: 32rem;
+        height: 16rem;
+    }
+
+    .item:nth-child(odd) {
+        left: -32rem;
+        opacity: 0;
+    }
+
+    .item:nth-child(even) {
+        right: -32rem;
+        opacity: 0;
+    }
+
+    .item:nth-child(odd).animate {
+        animation: slideRight 0.6s ease-out forwards;
+    }
+
+    .item:nth-child(even).animate {
+        animation: slideLeft 0.7s ease-out forwards;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1080px) {
+    .item {
+        width: 28rem;
+        height: 14rem;
+    }
+
+    .item:nth-child(odd) {
+        left: -32rem;
+        opacity: 0;
+    }
+
+    .item:nth-child(even) {
+        right: -32rem;
+        opacity: 0;
+    }
+
+    .item:nth-child(odd).animate {
+        animation: slideRight_2 0.6s ease-out forwards;
+    }
+
+    .item:nth-child(even).animate {
+        animation: slideLeft_2 0.7s ease-out forwards;
+    }
+}
+
+@media (min-width: 840px) and (max-width: 992px) {
+    .item {
+        width: 28rem;
+        height: 14rem;
+    }
+
+    .item:nth-child(odd) {
+        left: -32rem;
+        opacity: 0;
+    }
+
+    .item:nth-child(even) {
+        right: -32rem;
+        opacity: 0;
+    }
+
+    .item:nth-child(odd).animate {
+        animation: slideRight_3 0.6s ease-out forwards;
+    }
+
+    .item:nth-child(even).animate {
+        animation: slideLeft_3 0.7s ease-out forwards;
+    }
+
+}
+
+@media (max-width: 840px) {
+    .item {
+        width: 32rem;
+        height: 16rem;
+        top: 10rem;
+        opacity: 0;
+    }
+
+    .item:hover {
+        box-shadow: none;
+    }
+
+    .item.slideUp {
+        animation: slideUp 0.6s ease-out forwards;
+    }
+
+    .exp-wrapper {
+        margin-bottom: 150px;
+    }
+}
+
+@media (max-width: 560px) {
+    .item {
+        width: 94%;
+        height: 14rem;
+    }
+
+    .exp-wrapper {
+        margin-bottom: 150px;
+    }
+}

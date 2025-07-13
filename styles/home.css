@@ -1,0 +1,516 @@
+.home-wrapper {
+    height: 100dvh;
+    width: 100%;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+
+    background-color: var(--bg-color2);
+}
+
+.home-up-area {
+    width: 100%;
+}
+
+.name-wrapper {
+    width: 30%;
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+}
+
+.fname span,
+.lname span {
+    font-family: "Honk", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "MORF" 15,
+        "SHLN" 50;
+    /* font-size: 14rem; */
+
+    display: inline-block;
+
+    /* color: var(--text-black); */
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.fname span:hover,
+.lname span:hover {
+    color: var(--hover-letter);
+    transform: translateY(-1rem);
+    cursor: cell;
+}
+
+/* This mimics the hover effect via JS */
+.fname span.hover-effect,
+.lname span.hover-effect {
+    color: var(--hover-letter);
+    transform: translateY(-1rem);
+}
+
+.fname {
+    opacity: 0;
+}
+
+.fname.animate,
+.lname.animate {
+    animation: appearName 0.7s ease-out forwards;
+}
+
+.lname {
+    opacity: 0;
+}
+
+/* .home-video {
+    top: 10rem;
+}
+
+.home-video.animate {
+    animation: slideUpVideo 0.7s ease-out forwards;
+} */
+
+/* --------------------------------- */
+/* ---------- SCROLL DOWN ICON ----- */
+.scrolldown {
+    --color13: black;
+    --sizeX: 30px;
+    --sizeY: 50px;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: var(--sizeX);
+    height: var(--sizeY);
+    margin-left: var(sizeX / 2);
+    border: calc(var(--sizeX) / 10) solid var(--color13);
+    border-radius: 50px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    cursor: none;
+}
+
+.scrolldown.animate {
+    animation: slideUpScrollIcon 0.7s ease-out forwards;
+}
+
+.scrolldown::before {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+    background-color: var(--color13);
+    border-radius: 100%;
+    animation: scrolldown-anim 2s infinite;
+    box-sizing: border-box;
+    box-shadow: 0px -5px 3px 1px #ffffff66;
+}
+
+@keyframes scrolldown-anim {
+    0% {
+        opacity: 0;
+        height: 6px;
+    }
+
+    40% {
+        opacity: 1;
+        height: 10px;
+    }
+
+    80% {
+        transform: translate(0, 20px);
+        height: 10px;
+        opacity: 0;
+    }
+
+    100% {
+        height: 3px;
+        opacity: 0;
+    }
+}
+
+.chevrons {
+    padding: 6px 0 0 0;
+    margin-left: -3px;
+    margin-top: 48px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chevrondown {
+    margin-top: -6px;
+    position: relative;
+    border: solid var(--color13);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+}
+
+.chevrondown:nth-child(odd) {
+    animation: pulse54012 500ms ease infinite alternate;
+}
+
+.chevrondown:nth-child(even) {
+    animation: pulse54012 500ms ease infinite alternate 250ms;
+}
+
+@keyframes pulse54012 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.5;
+    }
+}
+
+
+
+.transition-1 {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    background: linear-gradient(var(--bg-color2), var(--bg-color1));
+}
+
+/* == == == CONTACT ME button == == == */
+.contact-btn {
+    position: relative;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 13rem;
+    overflow: hidden;
+    height: 3rem;
+    background-size: 300% 300%;
+    cursor: pointer;
+    backdrop-filter: blur(1rem);
+    border-radius: 5rem;
+    transition: 0.5s;
+    animation: gradient_301 5s ease infinite;
+    border: double 4px transparent;
+    background-image: linear-gradient(#212121, #212121),
+        linear-gradient(137.48deg,
+            #ffdb3b 10%,
+            #fe53bb 45%,
+            #8f51ea 67%,
+            #0044ff 87%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.contact-btn.animate {
+    animation: slideUp 0.7s ease-out forwards;
+}
+
+#container-stars {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: 0.5s;
+    backdrop-filter: blur(1rem);
+    border-radius: 5rem;
+}
+
+strong {
+    z-index: 2;
+    font-family: "Avalors Personal Use";
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: #ffffff;
+    text-shadow: 0 0 4px white;
+}
+
+#glow {
+    position: absolute;
+    display: flex;
+    width: 12rem;
+}
+
+.circle {
+    width: 100%;
+    height: 30px;
+    filter: blur(2rem);
+    animation: pulse_3011 4s infinite;
+    z-index: -1;
+}
+
+.circle:nth-of-type(1) {
+    background: rgba(254, 83, 186, 0.636);
+}
+
+.circle:nth-of-type(2) {
+    background: rgba(142, 81, 234, 0.704);
+}
+
+.contact-btn:hover #container-stars {
+    z-index: 1;
+    background-color: #212121;
+}
+
+.contact-btn:hover {
+    transform: scale(1.1);
+}
+
+.contact-btn:active {
+    border: double 4px #fe53bb;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    animation: none;
+}
+
+.contact-btn:active .circle {
+    background: #fe53bb;
+}
+
+#stars {
+    position: relative;
+    background: transparent;
+    width: 200rem;
+    height: 200rem;
+}
+
+#stars::after {
+    content: "";
+    position: absolute;
+    top: -10rem;
+    left: -100rem;
+    width: 100%;
+    height: 100%;
+    animation: animStarRotate 90s linear infinite;
+}
+
+#stars::after {
+    background-image: radial-gradient(#ffffff 1px, transparent 1%);
+    background-size: 50px 50px;
+}
+
+#stars::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 170%;
+    height: 500%;
+    animation: animStar 60s linear infinite;
+}
+
+#stars::before {
+    background-image: radial-gradient(#ffffff 1px, transparent 1%);
+    background-size: 50px 50px;
+    opacity: 0.5;
+}
+
+@keyframes animStar {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-135rem);
+    }
+}
+
+@keyframes animStarRotate {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0);
+    }
+}
+
+@keyframes gradient_301 {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pulse_3011 {
+    0% {
+        transform: scale(0.75);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.75);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+/* --------------------------------- */
+/* -- -- -- ANIMATIONS FOR NAME -- -- -- */
+@keyframes appearName {
+    0% {
+        right: -40rem;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    75% {
+        right: -6rem;
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    100% {
+        right: 0;
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        top: 10rem;
+        opacity: 0.3;
+    }
+
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes slideUpScrollIcon {
+    0% {
+        bottom: -5rem;
+        opacity: 0.3;
+    }
+
+    100% {
+        bottom: 2rem;
+        opacity: 1;
+    }
+}
+
+/* --------------------------------- */
+
+/* ============================================= */
+/* ----------- RESPONSIVE DESIGN --------------- */
+
+@media (min-width: 1280px) {
+    .home-up-area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+
+        gap: 4rem;
+
+        width: 100%;
+    }
+
+    .lname,
+    .fname {
+        font-size: 14rem;
+    }
+}
+
+@media (min-width: 1080px) and (max-width: 1280px) {
+    .home-up-area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+
+        gap: 3rem;
+
+        width: 100%;
+    }
+
+    .lname,
+    .fname {
+        font-size: 11rem;
+    }
+}
+
+@media (min-width: 840px) and (max-width: 1080px) {
+    .home-up-area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        gap: 1rem;
+
+        width: 100%;
+    }
+
+    .lname,
+    .fname {
+        font-size: 9rem;
+    }
+}
+
+@media (max-width: 840px) {
+    .home-up-area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        gap: 4rem;
+
+        width: 100%;
+    }
+
+    .lname,
+    .fname {
+        font-size: 8rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .home-up-area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        gap: 4rem;
+
+        width: 100%;
+    }
+
+    .lname,
+    .fname {
+        font-size: 7rem;
+    }
+}
