@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
             loader.style.display = "none";
             content.style.display = "block";
         }, 400); // allow fade transition to complete
-    }, 1000);
+    }, 2000);
 
 
     // === Smooth Scroll with Offset ===
