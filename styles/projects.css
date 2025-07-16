@@ -57,11 +57,7 @@
     animation: bounceAppear 0.5s ease-in forwards;
 }
 
-.project-box-wrapper:hover {
-    .project-box-inner {
-        transform: rotateY(180deg);
-    }
-}
+
 
 /* --- PROJECT BOX ANIMATION ---  */
 
@@ -367,16 +363,32 @@
     .section-title-projects {
         font-size: 6rem;
     }
+
+    .project-box-wrapper:hover {
+        .project-box-inner {
+            transform: rotateY(180deg);
+        }
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
     .section-title-projects {
         font-size: 5rem;
     }
+
+    .project-box-wrapper:hover {
+        .project-box-inner {
+            transform: rotateY(180deg);
+        }
+    }
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
     .section-title-projects {
         font-size: 4rem;
+    }
+
+    .project-box-wrapper.clicked .project-box-inner {
+        transform: rotateY(180deg);
     }
 }

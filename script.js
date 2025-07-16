@@ -84,7 +84,7 @@ window.addEventListener('DOMContentLoaded', () => {
         for (var i = visibleItems + 1; i < slideItems.length; i++) {
             stt++;
             slideItems[i].style.transform = `translateX(${120 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(-1deg)`;
-            slideItems[i].style.zIndex = 100-stt;
+            slideItems[i].style.zIndex = 100 - stt;
             slideItems[i].style.filter = 'blur(5px)';
             slideItems[i].style.opacity = stt > 2 ? 0 : 0.6;
         }
@@ -94,7 +94,7 @@ window.addEventListener('DOMContentLoaded', () => {
         for (var i = visibleItems - 1; i >= 0; i--) {
             stt++;
             slideItems[i].style.transform = `translateX(${-120 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(1deg)`;
-            slideItems[i].style.zIndex = 100-stt;
+            slideItems[i].style.zIndex = 100 - stt;
             slideItems[i].style.filter = 'blur(5px)';
             slideItems[i].style.opacity = stt > 2 ? 0 : 0.6;
         }
@@ -284,6 +284,18 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     projectBox.forEach(box => projectObserver.observe(box));
+
+    // ----------------------------------------------
+    // --- PROJECT BOX ROTATING ---
+    if (window.innerWidth <= 768) {
+        const boxes = document.querySelectorAll('.project-box-wrapper');
+        boxes.forEach(box => {
+            box.addEventListener('click', () => {
+                boxes.forEach(b => b !== box && b.classList.remove('clicked'));
+                box.classList.toggle('clicked');
+            });
+        });
+    }
 
     // ------------------------------------------------------------
     // Font Family animation -> when you scroll to its intersection
