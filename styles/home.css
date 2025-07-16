@@ -25,6 +25,7 @@
 
 .fname span,
 .lname span {
+    text-decoration: none;
     font-family: "Honk", system-ui;
     font-optical-sizing: auto;
     font-weight: 400;
