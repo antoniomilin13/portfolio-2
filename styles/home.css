@@ -25,8 +25,7 @@
 
 .fname span,
 .lname span {
-    text-decoration: none;
-    font-family: "Honk", system-ui, sans-serif;
+    font-family: "Honk", system-ui;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
@@ -492,8 +491,22 @@ strong {
     .fname {
         font-size: 7rem;
     }
+}
 
-    .scrolldown {
-        display: none;
+@media (max-width: 480px) {
+    .home-up-area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        gap: 4rem;
+
+        width: 100%;
+    }
+
+    .lname,
+    .fname {
+        font-size: 6rem;
     }
 }
