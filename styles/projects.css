@@ -15,30 +15,25 @@
     font-family: "Road Rage", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 6rem;
     color: var(--text-sec-title);
 
-    align-self: flex-start;
-
     margin-bottom: 50px;
-    padding-left: 0;
+    transform: translateX(-200%);
     opacity: 0;
 }
 
-.section-title-projects.animate {
-    animation: titleSlide 0.4s ease forwards;
+.section-title-projects.animate-projects {
+    animation: titleSlideProject 0.4s ease forwards;
 }
 
-@keyframes titleSlide {
+@keyframes titleSlideProject {
     to {
         opacity: 1;
-        padding-left: 6rem;
+        transform: translateX(0);
     }
 }
 
-.projects-gif {
-    /* width: ; */
-}
+
 
 .card-wrapper {
     display: flex;
@@ -54,6 +49,12 @@
     height: 300px;
     perspective: 1000px;
     border: 1px solid transparent;
+
+    opacity: 0;
+}
+
+.project-box-wrapper.animate-project-box {
+    animation: bounceAppear 0.5s ease-in forwards;
 }
 
 .project-box-wrapper:hover {
@@ -178,13 +179,22 @@
     width: 3rem;
 }
 
+.weather-icon:hover {
+    border-color: var(--hover-btn-weather);
+}
+
 /* --- SKILLS USED ON BACKSIDE --- */
 .skills-used {
     width: 90%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    place-items: center;
+    /* grid-template-columns: repeat(2, 1fr);
+    place-items: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 8px;
+
+    flex-wrap: wrap;
 }
 
 .p-b-skill {
@@ -199,8 +209,10 @@
     border-radius: 5px;
 }
 
+
+
 /* --- tiltation for each project box --- */
-.box-1 {
+/* .box-1 {
     transform: rotate(0) translateX(0);
     opacity: 0;
 }
@@ -213,9 +225,9 @@
 .box-3 {
     transform: rotate(0) translateX(0);
     opacity: 0;
-}
+} */
 
-.box-1.animate-project-box {
+/* .box-1.animate-project-box {
     animation: projectBox1 0.5s ease forwards;
 }
 
@@ -225,7 +237,7 @@
 
 .box-3.animate-project-box {
     animation: projectBox3 0.5s ease forwards;
-}
+} */
 
 @keyframes projectBox1 {
     0% {
@@ -349,4 +361,22 @@
     right: -10px;
     top: -10px;
     fill: var(--click-here);
+}
+
+@media (min-width: 1024px) {
+    .section-title-projects {
+        font-size: 6rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .section-title-projects {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 768px){
+    .section-title-projects {
+        font-size: 4rem;
+    }
 }

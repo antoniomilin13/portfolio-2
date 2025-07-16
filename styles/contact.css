@@ -18,10 +18,7 @@
     font-family: "Rubik Wet Paint", system-ui;
     font-weight: 400;
     font-style: normal;
-    font-size: 3.5rem;
-
-    padding-left: 6rem;
-    margin-bottom: 4rem;
+    margin-bottom: 50px;
 
     opacity: 0;
 }
@@ -413,4 +410,22 @@
     mix-blend-mode: overlay;
     pointer-events: none;
     animation: action-lines 0.5s ease-out forwards;
+}
+
+@media (min-width: 1024px) {
+    .section-title-contact {
+        font-size: 5rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .section-title-contact {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 768px){
+    .section-title-contact {
+        font-size: 3rem;
+    }
 }

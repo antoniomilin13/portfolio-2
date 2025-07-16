@@ -63,7 +63,7 @@
 
 .fname.animate,
 .lname.animate {
-    animation: appearName 0.7s ease-out forwards;
+    animation: bounceAppear 0.5s ease-out forwards;
 }
 
 .lname {
@@ -97,10 +97,12 @@
     box-sizing: border-box;
     margin-bottom: 16px;
     cursor: none;
+    /* animation opacity */
+    opacity: 0;
 }
 
 .scrolldown.animate {
-    animation: slideUpScrollIcon 0.7s ease-out forwards;
+    animation: slideUpScrollIcon 0.5s 1.1s ease-out forwards;
 }
 
 .scrolldown::before {
@@ -182,15 +184,7 @@
 
 
 
-.transition-1 {
-    height: 400px;
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
 
-    background: linear-gradient(var(--bg-color2), var(--bg-color1));
-}
 
 /* == == == CONTACT ME button == == == */
 .contact-btn {
@@ -217,10 +211,12 @@
             #0044ff 87%);
     background-origin: border-box;
     background-clip: content-box, border-box;
+    /* animation opacity */
+    opacity: 0;
 }
 
 .contact-btn.animate {
-    animation: slideUp 0.7s ease-out forwards;
+    animation: slideUp 0.5s ease-out 0.7s forwards;
 }
 
 #container-stars {
@@ -376,25 +372,7 @@ strong {
 
 /* --------------------------------- */
 /* -- -- -- ANIMATIONS FOR NAME -- -- -- */
-@keyframes appearName {
-    0% {
-        right: -40rem;
-        opacity: 0;
-        transform: scale(0.5);
-    }
 
-    75% {
-        right: -6rem;
-        opacity: 1;
-        transform: scale(1.1);
-    }
-
-    100% {
-        right: 0;
-        opacity: 1;
-        transform: scale(1);
-    }
-}
 
 @keyframes slideUp {
     0% {
@@ -512,5 +490,9 @@ strong {
     .lname,
     .fname {
         font-size: 7rem;
+    }
+
+    .scrolldown {
+        display: none;
     }
 }

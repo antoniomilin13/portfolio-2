@@ -4,6 +4,8 @@
     align-items: center;
     flex-direction: column;
     margin-bottom: 5rem;
+    width: 100%;
+    height: fit-content;
 }
 
 .exp-wrapper {
@@ -28,21 +30,18 @@
 
     color: var(--text-sec-title);
 
-
-    align-self: flex-start;
-    padding-left: 0;
     opacity: 0;
-
+    transform: translateX(-200%);
 }
 
-.section-title-experience.animate {
+.section-title-experience.animate-exp {
     animation: titleSlide 0.4s ease forwards;
 }
 
 @keyframes titleSlide {
     to {
         opacity: 1;
-        padding-left: 6rem;
+        transform: translateX(0);
     }
 }
 
@@ -517,6 +516,10 @@
 }
 
 @media (max-width: 560px) {
+    .exp-section {
+        margin-bottom: 2rem;
+    }
+
     .item {
         width: 94%;
         height: 14rem;
@@ -524,5 +527,9 @@
 
     .exp-wrapper {
         margin-bottom: 150px;
+    }
+
+    .section-title-experience {
+        font-size: 3rem;
     }
 }

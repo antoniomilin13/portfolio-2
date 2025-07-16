@@ -30,6 +30,8 @@
     --box-color1: #6d614c;
     --box-color2: #8f7f64;
 
+    --slider-color: #8f7f64;
+
     --border-color1: #181C14;
     --border-color2: #E2DFD0;
 
@@ -42,6 +44,7 @@
     --skills-box: #8f7f64;
 
     --hover-letter: #ff1493;
+    --hover-btn-weather: #4E71FF;
 
     --click-here: #c81072;
 
@@ -64,10 +67,10 @@
 
     --dropdown-text-active: #181C14;
 
-    --dropdown-text: ;
-
     --box-color1: #DDEB9D;
     --box-color2: #a3b652;
+
+    --slider-color: #DDEB9D;
 
     --border-color1: #181C14;
     --border-color2: #181C14;
@@ -82,6 +85,7 @@
     --skills-box: #FFFDF6;
 
     --hover-letter: #F97300;
+    --hover-btn-weather: #4E71FF;
 
     --click-here: #181C14;
 
@@ -101,10 +105,21 @@
 
 body {
     background-color: var(--bg-color1);
+}
 
+.site-content {
+    display: none;
 }
 
 /* === === General Section Stuff === === */
+
+.title-wrapper {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 .section-title {
@@ -222,3 +237,32 @@ body {
 .main-site {
     margin-left: 10rem;
 } */
+
+/* --- GENERAL ANIMATIONS --- */
+@keyframes bounceAppear {
+    0% {
+        /* right: -40rem; */
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    40% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    80% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

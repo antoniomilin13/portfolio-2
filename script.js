@@ -1,13 +1,24 @@
 window.addEventListener('DOMContentLoaded', () => {
+    // === LOADER ===
+
+    const loader = document.querySelector(".loader-content");
+    const content = document.querySelector(".site-content");
+
+    setTimeout(() => {
+        loader.classList.add("hidden");
+        setTimeout(() => {
+            loader.style.display = "none";
+            content.style.display = "block";
+        }, 400); // allow fade transition to complete
+    }, 1000);
+
+
     // === Smooth Scroll with Offset ===
     const navItems = document.querySelectorAll(".nav-item");
     const dropdownItems = document.querySelectorAll(".dropdown-li");
     const allTargetButtons = document.querySelectorAll("[data-target]");
     const checkbox = document.getElementById('checkbox'); // hamburger checkbox
-    const header = document.querySelector('.header');
     const body = document.body;
-
-    let lastScrollY = window.scrollY;
 
     // Function to handle smooth scroll and active class toggling
     function setupClickScroll(items, closeDropdown = false) {
@@ -53,6 +64,54 @@ window.addEventListener('DOMContentLoaded', () => {
     lname.classList.add('animate');
     contactBtn.classList.add('animate');
     scrollIcon.classList.add('animate');
+
+    // -----------------------------------------------
+    // 
+    // --- SLIDER ABOUT ME ---
+    let slideItems = document.querySelectorAll('.slide-wrap .slide-item');
+    let nextBtn = document.getElementById('nextBtn');
+    let prevBtn = document.getElementById('prevBtn');
+
+    let visibleItems = 2;
+
+    function loadShow() {
+        let stt = 0;
+        slideItems[visibleItems].style.transform = `none`;
+        slideItems[visibleItems].style.zIndex = 101;
+        slideItems[visibleItems].style.filter = 'none';
+        slideItems[visibleItems].style.opacity = 1;
+
+        for (var i = visibleItems + 1; i < slideItems.length; i++) {
+            stt++;
+            slideItems[i].style.transform = `translateX(${120 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(-1deg)`;
+            slideItems[i].style.zIndex = 100-stt;
+            slideItems[i].style.filter = 'blur(5px)';
+            slideItems[i].style.opacity = stt > 2 ? 0 : 0.6;
+        }
+
+        stt = 0;
+
+        for (var i = visibleItems - 1; i >= 0; i--) {
+            stt++;
+            slideItems[i].style.transform = `translateX(${-120 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(1deg)`;
+            slideItems[i].style.zIndex = 100-stt;
+            slideItems[i].style.filter = 'blur(5px)';
+            slideItems[i].style.opacity = stt > 2 ? 0 : 0.6;
+        }
+    }
+
+    loadShow();
+
+    // next & prev clicking functionality
+    nextBtn.onclick = function () {
+        visibleItems = visibleItems + 1 < slideItems.length ? visibleItems + 1 : visibleItems;
+        loadShow();
+    }
+
+    prevBtn.onclick = function () {
+        visibleItems = visibleItems - 1 >= 0 ? visibleItems - 1 : visibleItems;
+        loadShow();
+    }
 
     // ------------- SECTION experience: Animate .item elements on scroll -------------
 
@@ -148,27 +207,45 @@ window.addEventListener('DOMContentLoaded', () => {
     const themeSelector = document.getElementById("themeSelector");
     const rootElement = document.documentElement; // <html> element
 
-    themeSelector.addEventListener("change", () => {
-        // Remove all theme classes
-        rootElement.classList.remove("theme-dark", "theme-light", "theme-blue");
-
-        // Add the selected theme class
-        rootElement.classList.add(themeSelector.value);
-    });
-
-    // Optional: Load saved theme from localStorage
+    // Load saved theme or set default to 'theme-light'
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-        rootElement.classList.add(savedTheme);
-        themeSelector.value = savedTheme;
-    }
+    const defaultTheme = "theme-light";
+    const initialTheme = savedTheme || defaultTheme;
 
-    // Save selection
+    rootElement.classList.add(initialTheme);
+    themeSelector.value = initialTheme;
+
+    // Change theme on selection
     themeSelector.addEventListener("change", () => {
-        localStorage.setItem("theme", themeSelector.value);
+        // Remove existing theme classes
+        rootElement.classList.remove("theme-dark", "theme-light");
+
+        // Add selected theme
+        const selectedTheme = themeSelector.value;
+        rootElement.classList.add(selectedTheme);
+
+        // Save to localStorage
+        localStorage.setItem("theme", selectedTheme);
     });
 
     // ------------- SECTION 4: Skill Boxes -------------
+    // --- skills ection slide right ---
+    const skillsSection = document.querySelectorAll('.skills-section');
+
+    const skillsSectionObs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                skillsSectionObs.unobserve(entry.target); // Animate only once
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: "0px 0px -30% 0px", // Trigger when 30% of the skills-box is visible
+        threshold: 0
+    });
+
+    skillsSection.forEach(box => skillsSectionObs.observe(box));
 
     // ---------  ---------
     const skillBoxes = document.querySelectorAll('.skills-box');
@@ -182,7 +259,7 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }, {
         root: null,
-        rootMargin: "0px 0px -20% 0px", // Trigger when 30% of the skills-box is visible
+        rootMargin: "0px 0px -20% 0px",
         threshold: 0
     });
 
@@ -211,24 +288,29 @@ window.addEventListener('DOMContentLoaded', () => {
     // ------------------------------------------------------------
     // Font Family animation -> when you scroll to its intersection
 
-    const titleTargets = document.querySelectorAll(
-        ".section-title-experience, .section-title-projects, .section-title-contact"
-    );
+    const wrappers = document.querySelectorAll(".title-wrapper");
 
     const titleObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const el = entry.target;
+                const wrapper = entry.target;
 
-                if (el.classList.contains("section-title-experience")) {
-                    el.classList.add("animate");
-                } else if (el.classList.contains("section-title-projects")) {
-                    el.classList.add("animate");
-                } else if (el.classList.contains("section-title-contact")) {
-                    el.classList.add("animate-contact");
+                // Find the child section title inside the wrapper
+                const el = wrapper.querySelector(
+                    ".section-title-experience, .section-title-projects, .section-title-contact"
+                );
+
+                if (el) {
+                    if (el.classList.contains("section-title-experience")) {
+                        el.classList.add("animate-exp");
+                    } else if (el.classList.contains("section-title-projects")) {
+                        el.classList.add("animate-projects");
+                    } else if (el.classList.contains("section-title-contact")) {
+                        el.classList.add("animate-contact");
+                    }
                 }
 
-                titleObserver.unobserve(el); // Animate once
+                titleObserver.unobserve(wrapper); // Animate once per wrapper
             }
         });
     }, {
@@ -237,8 +319,8 @@ window.addEventListener('DOMContentLoaded', () => {
         threshold: 0
     });
 
-    titleTargets.forEach(target => titleObserver.observe(target));
-
+    // Observe all wrappers
+    wrappers.forEach(wrapper => titleObserver.observe(wrapper));
 
     // ------------------------------------------------------------
     // POP UP BOX
@@ -328,5 +410,4 @@ window.addEventListener('DOMContentLoaded', () => {
             popup.style.display = "none";
         }
     });
-
 });
